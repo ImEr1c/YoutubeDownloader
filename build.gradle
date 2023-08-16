@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'edu.sc.seis.launch4j' version '3.0.1'
+}
+
+group 'com.imer1c'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('io.github.gaeqs:JavaYoutubeDownloader:1.2.3')
+}
+
+launch4j {
+    setHeaderType("console")
+    jarTask = shadowJar
+    mainClassName = "com.imer1c.Main"
+    outfile = "ytdl.exe"
+}
